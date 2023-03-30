@@ -76,8 +76,4 @@ public class Lab08 {
         }
     }
     
-    public static int getSum(LinkedList list){
-        //find the sum of all nodes in linkedlist
-        return -1;
-    }
 }
