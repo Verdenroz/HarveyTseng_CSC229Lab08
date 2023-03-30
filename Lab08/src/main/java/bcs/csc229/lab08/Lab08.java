@@ -21,11 +21,12 @@ public class Lab08 {
         LinkedList list01 = new LinkedList();
         LinkedList list02 = new LinkedList();
         
-        primesToList(100, list01);
+        primesToList(100, list01);  //appends prime numbers from 0 to n to list1
         System.out.println(list01);
         
-        primeswithThreeToList(100, list02);
+        primeswithThreeToList(100, list02); //appends prime numbers from 0 to n with '3' to list2
         System.out.println(list02);
+        System.out.println(list02.getSum());
         
     }
     
