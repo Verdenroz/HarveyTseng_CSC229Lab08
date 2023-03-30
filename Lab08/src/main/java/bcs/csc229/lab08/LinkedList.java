@@ -80,7 +80,16 @@ class LinkedList {
          }
       }
    }
-   
+      
+   public int getSum(){
+       int sum = 0;
+       Node e = this.head;
+       while(e != null){
+           sum += e.data;
+           e = e.next;
+       }
+       return sum;
+   }
    
    @Override
    public String toString(){
