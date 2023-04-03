@@ -24,7 +24,9 @@ public class Lab08 {
         primesToList(100, list01);  //appends prime numbers from 0 to n to list1
         System.out.println(list01);
         
-        primeswithThreeToList(100, list02); //appends prime numbers from 0 to n with '3' to list2
+        list01.transfer3Primes(list02);
+        //transfer primes from list01 to list02 that contain '3'
+        
         System.out.println(list02);
         System.out.println(list02.getSum());
         
@@ -32,11 +34,11 @@ public class Lab08 {
     
     public static boolean isPrime(int num){
         //checks if prime
-        if(num <= 1){
+        if(num <= 1){       //every number <= 1 is not prime
             return false;
         }
         else{
-            for(int i = 2; i < num; i++){
+            for(int i = 2; i < num / 2; i++){
                 if(num % i == 0){               //n has another factor if remainder is 0
                     return false;
                 }
@@ -53,31 +55,5 @@ public class Lab08 {
                 list.append(newNode);           
             }
         }
-    }
-    
-    public static boolean containsThree(int n){ 
-        //checks if the number contains a three
-       while(n > 0){
-           if(n % 10 == 3){
-               return true;
-           }
-           n  /= 10;
-       }
-       return false;
-    }
-    
-    public static void primeswithThreeToList(int n, LinkedList list){
-        //add all primes that contain '3' to the linkedlist
-        for(int i = 0; i < n; i++){
-            if(isPrime(i) && containsThree(i)){
-                Node newNode = new Node(i);
-                list.append(newNode);
-            }
-        }
-    }
-    
-    public static int getSum(LinkedList list){
-        //find the sum of all nodes in linkedlist
-        return -1;
     }
 }
