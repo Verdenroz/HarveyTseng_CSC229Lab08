@@ -80,6 +80,29 @@ class LinkedList {
          }
       }
    }
+   
+   //transfers primes that contain '3' to another list
+   public void transfer3Primes(LinkedList transferList){
+       Node node = this.head;
+       while(node != null){
+           if(containsThree(node.data)){
+               Node newNode = new Node(node.data);
+               transferList.append(newNode);
+           }
+           node = node.next;
+       }
+   }
+   
+   public static boolean containsThree(int n){ 
+        //checks if the number contains a three
+       while(n > 0){
+           if(n % 10 == 3){
+               return true;
+           }
+           n  /= 10;
+       }
+       return false;
+    }
       
    public int getSum(){
        int sum = 0;
